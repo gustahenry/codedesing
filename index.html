@@ -20,7 +20,16 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
-  
+  <script>
+
+function enviaPagseguro(){
+$.post('pagseguro.php','',function(data){
+$('#code').val(data);
+$('#comprar').submit();
+})
+}
+
+</script>
   
 </head>
 <body>
@@ -288,6 +297,14 @@
                     <div class="plan-body">
                         <p class="mbr-text mbr-fonts-style display-7"><strong>Site moderno<br>Site persnalizado<br>Layout responsivo<br>Integração com redes sociais<br>Formulario de contato<br>1 ano de hospdegem<br>Email personalizado<br>Entrega em 7 dias</strong></p>
                         <div class="mbr-section-btn pt-4 text-center"><a href="https://mobirise.com" class="btn btn-primary display-4">CONTRATAR</a></div>
+                        <button onclick="enviaPagseguro()">Comprar</button>
+                        <form id="comprar" action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
+
+                        <input type="hidden" name="code" id="code" value="" />
+
+                        </form>
+                        <script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+
                     </div>
                 </div>
             </div>
@@ -332,6 +349,7 @@
                     <div class="plan-body ">
                         <p class="mbr-text mbr-fonts-style display-7"><strong>Loja responsiva<br>Layout pesonalizado<br>Integração com redes socias<br>1 ano de hospedagem<br>Email personalizado<br>Aréa administrativa<br>Entrega em 15 dias</strong></p>
                         <div class="mbr-section-btn pt-4 text-center"><a href="https://mobirise.com" class="btn btn-primary display-4">CONTRATAR</a></div>
+
                     </div>
                 </div>
             </div>
